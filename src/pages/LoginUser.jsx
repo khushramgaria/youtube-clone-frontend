@@ -32,7 +32,7 @@ const LoginUser = () => {
 
       if (response.data.statusCode === 200) {
         console.log("User Login Successfully");
-        navigate("/userprofile")
+        navigate("/home")
         localStorage.setItem("accessToken", response.data.data.accessToken);
       }
     } catch (error) {
