@@ -9,13 +9,14 @@ import {
 } from "react-icons/fa";
 import { BiLike } from "react-icons/bi";
 import { IoSettingsSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 function SideBar() {
   const sidebarNavTop = [
     {
       title: "Home",
       icon: <FaHome />,
-      link: "",
+      link: "/home",
     },
     {
       title: "Liked Videos",
@@ -60,9 +61,11 @@ function SideBar() {
       <div>
         <h1 className="text-white font-bold text-center mt-2 text-2xl py-1">YouTube</h1>
         {sidebarNavTop.map((nav) => (
-          <div className="flex text-white border items-center gap-2 mt-3 mx-2 py-1 px-3 cursor-pointer">
-            {nav.icon}
-            {nav.title}
+          <div className="flex text-white border mt-3 mx-2">
+            <Link to={nav.link} className="flex items-center gap-2 py-1 px-3 cursor-pointer">
+              {nav.icon}
+              {nav.title}
+            </Link>
           </div>
         ))}
       </div>
